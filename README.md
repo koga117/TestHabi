@@ -26,21 +26,18 @@ Pasos de desarrollo:
 
   1. Se importan las librerías necesarias, incluyendo pymysql para la conexión a MySQL.
   2. Se configura la conexión a la base de datos MySQL.
-  3. Se definen los modelos Inmueble y StatusHistory con sus atributos y relaciones.
-  4. Se crean las tablas en la base de datos (si no existen).
-  5. Se define la clase InmueblesHandler que maneja las peticiones HTTP GET a la ruta /inmuebles.
-  6. Se obtienen los parámetros de la consulta del front-end.
-  7. Se realiza la conexión a la base de datos MySQL.
-  8. Se ejecuta la consulta a la base de datos, obteniendo todos los inmuebles y su historial de estados.
+  3. Se define la clase Inmuebles que maneja las peticiones HTTP GET a la ruta /inmuebles.
+  4. Se obtienen los parámetros de la consulta del front-end.
+  5. Se realiza la conexión a la base de datos MySQL.
+  6. Se ejecuta la consulta a la base de datos, obteniendo todos los inmuebles y su historial de estados.
 
 Ejecucion api --Windows:
   1. Ejecutar comando para creacion de entorno virtual (py -m venv .venv) 
   2. Ejecutar comando para activar entorno virtual (.venv\Scripts\activate)
   3. Ejecutar comando para la instalacion de librerias (pip install -r .\requeriments.txt)
-  4. Ejecutar el comando para subir el api (python .\main.py)
-   
-Ejecucion pruebas unitarias --Windows:
-  1. Ejecutar comando para dar inicio a pruebas unitarias (pytest .\test_api.py)
+  4. Ejecutar el comando para subir el api (python .\app.py)
+  5. Ejecutar pruebas usando postman tipo de peticion GET URL (http://localhost:5000/inmuebles)
+  6. Json para la ejecucion de la prueba:
 
 Archivo JSON con los datos esperados del front para los filtros:
 
@@ -50,6 +47,12 @@ Archivo JSON con los datos esperados del front para los filtros:
         "city": "bogota",
         "estado": "en_venta"
     }
+   
+Ejecucion pruebas unitarias --Windows:
+  1. Ejecutar el comando para ejecutar la prueba unitaria de conexion a BD (python -m unittest tests.test_acceso_datos)
+  2. Ejecutar el comando para ejecutar la prueba unitaria de logica de negocio (python -m unittest tests.test_logica_negocio)
+  3. Ejecutar el comando para ejecutar la prueba unitaria de api (python -m unittest tests.test_app)
+
 
 # Segundo requerimiento
     Diagrama Entidad-Relacion:
@@ -158,4 +161,4 @@ Archivo JSON con los datos esperados del front para los filtros:
                 Diagrama dentro de la carpeta Diagram
 # Segundo ejercicio 
 
-    **Dentro del archivo algoritmo_bloques**
+    **Dentro del archivo algoritmo_bloques.py**

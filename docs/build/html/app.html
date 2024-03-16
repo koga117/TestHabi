@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="Spanish" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Acceso a Aplicacion de Inmuebles &mdash; documentación de inmuebles_api - 1.0</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=33097a75"></script>
+        <script src="_static/doctools.js?v=888ff710"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Índice" href="genindex.html" />
+    <link rel="search" title="Búsqueda" href="search.html" />
+    <link rel="next" title="Acceso a Logica Inmuebles" href="logica_negocio.html" />
+    <link rel="prev" title="Acceso a Datos de Inmuebles" href="acceso_datos.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            inmuebles_api
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Buscar documentos" aria-label="Buscar documentos" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contenidos:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="acceso_datos.html">Acceso a Datos de Inmuebles</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Acceso a Aplicacion de Inmuebles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="logica_negocio.html">Acceso a Logica Inmuebles</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">inmuebles_api</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Acceso a Aplicacion de Inmuebles</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/app.rst.txt" rel="nofollow"> Ver código fuente de la página</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="acceso-a-aplicacion-de-inmuebles">
+<h1>Acceso a Aplicacion de Inmuebles<a class="headerlink" href="#acceso-a-aplicacion-de-inmuebles" title="Link to this heading"></a></h1>
+<p># Aplicación Inmuebles</p>
+<p>## Descripción</p>
+<p>Esta aplicación web es una API RESTful que permite a los usuarios buscar inmuebles por diferentes criterios. La API expone un endpoint para filtrar inmuebles y devuelve los resultados en formato JSON.</p>
+<p>## Arquitectura</p>
+<p>La aplicación está implementada con Python utilizando el módulo <cite>http.server</cite> para crear un servidor HTTP simple.</p>
+<p>## Funcionalidades</p>
+<ul class="simple">
+<li><p><strong>Búsqueda de inmuebles:</strong> Los usuarios pueden enviar solicitudes GET a la API para buscar inmuebles utilizando filtros.</p></li>
+</ul>
+<p>## Endpoint</p>
+<ul class="simple">
+<li><p><strong>GET /inmuebles</strong>: Este endpoint recibe un cuerpo de petición con un diccionario JSON que contiene los criterios de filtro para los inmuebles. La API devuelve una lista de inmuebles en formato JSON que cumplen con los criterios especificados.</p></li>
+</ul>
+<p>## Parámetros de la petición</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><strong>filtros (JSON)</strong>: Diccionario con los criterios de filtro para los inmuebles. Las claves del diccionario deben coincidir con los nombres de las propiedades de los inmuebles.</p></li>
+</ul>
+</div></blockquote>
+<p>## Valor de retorno</p>
+<ul class="simple">
+<li><p><strong>Lista de inmuebles (JSON)</strong>: Una lista de objetos JSON, donde cada objeto representa un inmueble con sus respectivas propiedades.</p></li>
+</ul>
+<p>## Ejemplo de uso</p>
+<p><strong>Solicitud GET:</strong></p>
+<p>curl -X GET <a class="reference external" href="http://localhost:5000/inmuebles">http://localhost:5000/inmuebles</a> -H &quot;Content-Type: application/json&quot; -d '{&quot;ciudad&quot;: &quot;Bogotá&quot;, &quot;precio_minimo&quot;: 100000}'</p>
+<p><strong>Respuesta de la API (formato JSON):</strong></p>
+<p><a href="#id1"><span class="problematic" id="id2">``</span></a><a href="#id3"><span class="problematic" id="id4">`</span></a>json
+[</p>
+<blockquote>
+<div><dl class="simple">
+<dt>{</dt><dd><p>&quot;id&quot;: 123,
+&quot;address&quot;: &quot;Calle 123&quot;,
+&quot;city&quot;: &quot;Bogotá&quot;,
+&quot;price&quot;: 200000,
+&quot;description&quot;: &quot;Apartamento en el centro de la ciudad&quot;</p>
+</dd>
+</dl>
+<p>},
+{</p>
+<blockquote>
+<div><p>&quot;id&quot;: 456,
+&quot;address&quot;: &quot;Avenida Principal&quot;,
+&quot;city&quot;: &quot;Bogotá&quot;,
+&quot;price&quot;: 300000,
+&quot;description&quot;: &quot;Casa con jardín&quot;</p>
+</div></blockquote>
+<p>}</p>
+</div></blockquote>
+<p>]</p>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Pie de página">
+        <a href="acceso_datos.html" class="btn btn-neutral float-left" title="Acceso a Datos de Inmuebles" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Anterior</a>
+        <a href="logica_negocio.html" class="btn btn-neutral float-right" title="Acceso a Logica Inmuebles" accesskey="n" rel="next">Siguiente <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Derechos de autor 2024, Chen Casas.</p>
+  </div>
+
+  Compilado con <a href="https://www.sphinx-doc.org/">Sphinx</a> usando un
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">tema</a>
+    proporcionado por <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

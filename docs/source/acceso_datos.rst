@@ -1,0 +1,33 @@
+Acceso a Datos de Inmuebles
+===========================
+
+# Módulo acceso_datos
+
+Este módulo proporciona funciones para acceder a la base de datos y obtener información sobre inmuebles.
+
+## Dependencias
+
+Este módulo depende de la librería `pymysql` para conectarse a la base de datos MySQL.
+
+## Funciones
+
+### obtener_conexion()
+
+Obtiene una conexión a la base de datos.
+
+**Valor de retorno:**
+
+* Una conexión a la base de datos MySQL.
+
+### obtener_inmuebles(filtros=None)
+
+Obtiene una lista de inmuebles.
+
+**Parámetros:**
+
+* **filtros**: Diccionario con filtros para la búsqueda (opcional). Actualmente no se implementa el filtrado por este parámetro.
+
+**Valor de retorno:**
+
+* Una lista de diccionarios, cada diccionario representa un inmueble con sus respectivos datos.
+
